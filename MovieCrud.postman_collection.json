@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "d2a02732-435a-4992-85c0-dcdcd1d60690",
+		"name": "SaleTestTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list all movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\n  listMoviesApi{\n  count\n    firstPage\n    count\n    hasNext\n    hasPrev\n    last\n    list{\n  \t\t avgRating\n      director\n      duration\n      genre\n      title\n      totalVote\n      year\n    }\n    nextPage\n    prevPage\n    page\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://dc335e4cd5ff.ngrok.io/graphql",
+					"protocol": "https",
+					"host": [
+						"dc335e4cd5ff",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movie detail with search by title",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\n  moviesDetailApi(title: \"Miss Jerry\" ){\n   \ncount\n    firstPage\n    count\n    hasNext\n    hasPrev\n    last\n    \n    list{\n      actors\n      avgVote\n      budget\n      country\n      datePublished\n      description\n      director\n      duration\n      genre\n      language\n      metascore\n      originalTitle\n      productionCompany\n      reviewsFromCritics\n      reviewsFromUsers\n      title\n      titleId\n      usaGrossIncome\n      votes\n      worldwideGrossIncome\n      writer\n      year\n    }\n    nextPage\n    prevPage\n    page\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://dc335e4cd5ff.ngrok.io/graphql",
+					"protocol": "https",
+					"host": [
+						"dc335e4cd5ff",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movie detail with pagination",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\n  moviesDetailApi(pageNo: 2){\n   \ncount\n    firstPage\n    count\n    hasNext\n    hasPrev\n    last\n    \n    list{\n      actors\n      avgVote\n      budget\n      country\n      datePublished\n      description\n      director\n      duration\n      genre\n      language\n      metascore\n      originalTitle\n      productionCompany\n      reviewsFromCritics\n      reviewsFromUsers\n      title\n      titleId\n      usaGrossIncome\n      votes\n      worldwideGrossIncome\n      writer\n      year\n    }\n    nextPage\n    prevPage\n    page\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://dc335e4cd5ff.ngrok.io/graphql",
+					"protocol": "https",
+					"host": [
+						"dc335e4cd5ff",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list movies with sorting and pagination",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\n  listMoviesApi  ( sortedBy: \"asc\" \n    sortedItem: \"year\" pageNo: 2){\n  count\n    firstPage\n    count\n    hasNext\n    hasPrev\n    last\n    list{\n  \t\t avgRating\n      director\n      duration\n      genre\n      title\n      totalVote\n      year\n    }\n    nextPage\n    prevPage\n    page\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://dc335e4cd5ff.ngrok.io/graphql",
+					"protocol": "https",
+					"host": [
+						"dc335e4cd5ff",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
